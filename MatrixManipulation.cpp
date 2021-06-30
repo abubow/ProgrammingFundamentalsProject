@@ -323,11 +323,29 @@ double** subMatrix(double** arr, int size,int x,int y){
     }
     return sub;
 }
-void mainMenu(int s){
+void mainMenuChoice(int s){
     switch(s){
         case 1:
         cout << "";
     }
+}
+void showMainMenuOptions(){
+    cout << "1. Sum of Matrix (sum of all values)\n";
+    cout << "2. Product of Matrix (product of all values)\n";
+    cout << "3. Row-wise Average\n";
+    cout << "4. Column-wise Average\n";
+    cout << "5. Average or whole Matrix\n";
+    cout << "6. Row-wise sorting of Matrix\n";
+    cout << "7. Column-wise sorting of Matrix\n";
+    cout << "8. Scalar Matrix Addition\n";
+    cout << "9. Addition of two Matrices\n";
+    cout << "10. Scalar Matrix Subtraction\n";
+    cout << "11. Subtraction of two Matrices\n";
+    cout << "12. Scalar Matrix Multiplication\n";
+    cout << "13. Multiplication of two Matrices\n";
+    cout << "14. Scalar Matrix Division\n";
+    cout << "15. Matrix transpose\n";
+    cout << "16. Matrix determinant\n";
 }
 int main() {
     
