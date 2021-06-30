@@ -346,6 +346,7 @@ void showMainMenuOptions(){
     cout << "14. Scalar Matrix Division\n";
     cout << "15. Matrix transpose\n";
     cout << "16. Matrix determinant\n";
+	cout << "17. Matrix Inverse\n";
 }
 int main() {
     
