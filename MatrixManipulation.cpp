@@ -16,10 +16,10 @@ void copy1D(double* a, double* b, int s) {
 void cout1D(int* arr, int size) {
 	for (int i = 0; i < size; i++)
 	{
-		if (i != size - 1){
+		if (i != size - 1) {
 			cout << arr[i] << ", ";
 		}
-		else{
+		else {
 			cout << arr[i] << ".\n";
 		}
 	}
@@ -28,69 +28,69 @@ void cout1D(int* arr, int size) {
 void cout1D(double* arr, int size) {
 	for (int i = 0; i < size; i++)
 	{
-		if (i != size - 1){
+		if (i != size - 1) {
 			cout << arr[i] << ", ";
 		}
-		else{
+		else {
 			cout << arr[i] << ".\n";
 		}
 	}
 	cout << endl;
 }
-double**create2D(int rows, int columns){
-	double **arr = new double*[rows];
-	for (int i = 0; i<rows; i++){
+double** create2D(int rows, int columns) {
+	double** arr = new double* [rows];
+	for (int i = 0; i < rows; i++) {
 		arr[i] = new double[columns];
 	}
 	return arr;
 }
-void inputConsoleMD(int**arr, int rows, int columns){
-	for (int i = 0; i<rows; i++){
-		for (int j = 0; j<columns; j++){
+void inputConsoleMD(int** arr, int rows, int columns) {
+	for (int i = 0; i < rows; i++) {
+		for (int j = 0; j < columns; j++) {
 			cin >> arr[i][j];
 		}
 	}
 }
-void inputConsoleMD(double**arr, int rows, int columns){
-	for (int i = 0; i<rows; i++){
-		for (int j = 0; j<columns; j++){
+void inputConsoleMD(double** arr, int rows, int columns) {
+	for (int i = 0; i < rows; i++) {
+		for (int j = 0; j < columns; j++) {
 			cin >> arr[i][j];
 		}
 	}
 }
-void outputConsoleMD(int**arr, int rows, int columns){
-	for (int i = 0; i<rows; i++){
-		for (int j = 0; j<columns; j++){
+void outputConsoleMD(int** arr, int rows, int columns) {
+	for (int i = 0; i < rows; i++) {
+		for (int j = 0; j < columns; j++) {
 			cout << arr[i][j] << ", ";
 		}
 		cout << endl;
 	}
 }
-void outputConsoleMD(double**arr, int rows, int columns){
-	for (int i = 0; i<rows; i++){
-		for (int j = 0; j<columns; j++){
+void outputConsoleMD(double** arr, int rows, int columns) {
+	for (int i = 0; i < rows; i++) {
+		for (int j = 0; j < columns; j++) {
 			cout << arr[i][j] << ", ";
 		}
 		cout << endl;
 	}
 }
-void inputFileMD(char*file, int**arr, int rows, int columns){
+void inputFileMD(char* file, int** arr, int rows, int columns) {
 	ifstream fin(file);
-	for (int i = 0; i<rows; i++){
-		for (int j = 0; j<columns; j++){
+	for (int i = 0; i < rows; i++) {
+		for (int j = 0; j < columns; j++) {
 			fin >> arr[i][j];
 		}
 	}
 	fin.close();
 }
-void outputFileMD(char*file, int**arr, int rows, int columns){
+void outputFileMD(char* file, int** arr, int rows, int columns) {
 	ofstream fout(file);
-	for (int i = 0; i<rows; i++){
-		for (int j = 0; j<columns; j++){
-			if (j != columns - 1){
+	for (int i = 0; i < rows; i++) {
+		for (int j = 0; j < columns; j++) {
+			if (j != columns - 1) {
 				fout << arr[i][j] << " ";
 			}
-			else{
+			else {
 				fout << arr[i][j];
 			}
 		}
@@ -98,14 +98,14 @@ void outputFileMD(char*file, int**arr, int rows, int columns){
 	}
 	fout.close();
 }//ios mode
-void outputFileMD(char*file, int i, int**arr, int rows, int columns){
+void outputFileMD(char* file, int i, int** arr, int rows, int columns) {
 	ofstream fout(file, ios::app);
-	for (int i = 0; i<rows; i++){
-		for (int j = 0; j<columns; j++){
-			if (j != columns - 1){
+	for (int i = 0; i < rows; i++) {
+		for (int j = 0; j < columns; j++) {
+			if (j != columns - 1) {
 				fout << arr[i][j] << " ";
 			}
-			else{
+			else {
 				fout << arr[i][j];
 			}
 		}
@@ -141,17 +141,17 @@ double productOfMatrix(double** arr, int rows, int columns) {
 }
 double averageWholeMatrix(double** arr, int rows, int columns) {
 	int sum = sumOfMatrix(arr, rows, columns);
-	return sum / ((double)(columns*rows));
+	return sum / ((double)(columns * rows));
 }
 double* rowWiseAverage(double** arr, int rows, int columns) {
-	int sum;
+	double sum;
 	double* rowAverage = new double[rows];
 	for (int i = 0; i < rows; i++) {
 		sum = 0;
 		for (int j = 0; j < columns; j++) {
 			sum += arr[i][j];
 		}
-		rowAverage[i] = sum / (double)columns;
+		rowAverage[i] = sum / columns;
 	}
 	return rowAverage;
 }
@@ -178,7 +178,6 @@ for (int i = 1; i < rows; i++)
 {
 currentSum = sumRow1D(arr[i], rows);
 if (currentSum > greatest) {
-
 greatest = currentSum;
 }
 }
@@ -188,18 +187,18 @@ int *temp = new int[columns];
 }
 */
 double** addMatrixs(double*** arrs, int num, int rows, int columns) {
-	double**ans = new double*[rows];
-	for (int i = 0; i<rows; i++){
+	double** ans = new double* [rows];
+	for (int i = 0; i < rows; i++) {
 		ans[i] = new double[columns];
 	}
-	for (int i = 0; i<rows; i++){
-		for (int j = 0; j<rows; j++){
+	for (int i = 0; i < rows; i++) {
+		for (int j = 0; j < rows; j++) {
 			ans[i][j] = 0;
 		}
 	}
-	for (int i = 0; i<rows; i++){
-		for (int j = 0; j<rows; j++){
-			for (int k = 0; k<rows; k++){
+	for (int i = 0; i < rows; i++) {
+		for (int j = 0; j < rows; j++) {
+			for (int k = 0; k < rows; k++) {
 				ans[j][k] += arrs[i][j][k];
 			}
 		}
@@ -207,35 +206,35 @@ double** addMatrixs(double*** arrs, int num, int rows, int columns) {
 	return ans;
 }
 double** addScalarMatrixs(double** arrs, int rows, int columns, double num) {
-	double**ans = new double*[rows];
-	for (int i = 0; i<rows; i++){
+	double** ans = new double* [rows];
+	for (int i = 0; i < rows; i++) {
 		ans[i] = new double[columns];
 	}
-	for (int i = 0; i<rows; i++){
-		for (int j = 0; j<columns; j++){
+	for (int i = 0; i < rows; i++) {
+		for (int j = 0; j < columns; j++) {
 			ans[i][j] = num;
 		}
 	}
-	for (int j = 0; j<rows; j++){
-		for (int k = 0; k<columns; k++){
+	for (int j = 0; j < rows; j++) {
+		for (int k = 0; k < columns; k++) {
 			ans[j][k] += arrs[j][k];
 		}
 	}
 	return ans;
 }
 double** subtractMatrixs(double*** arrs, int num, int rows, int columns) {
-	double**ans = new double*[rows];
-	for (int i = 0; i<rows; i++){
+	double** ans = new double* [rows];
+	for (int i = 0; i < rows; i++) {
 		ans[i] = new double[columns];
 	}
-	for (int i = 0; i<rows; i++){
-		for (int j = 0; j<rows; j++){
+	for (int i = 0; i < rows; i++) {
+		for (int j = 0; j < rows; j++) {
 			ans[i][j] = arrs[0][i][j];
 		}
 	}
-	for (int i = 1; i<rows; i++){
-		for (int j = 0; j<rows; j++){
-			for (int k = 0; k<rows; k++){
+	for (int i = 1; i < rows; i++) {
+		for (int j = 0; j < rows; j++) {
+			for (int k = 0; k < rows; k++) {
 				ans[j][k] -= arrs[i][j][k];
 			}
 		}
@@ -243,35 +242,35 @@ double** subtractMatrixs(double*** arrs, int num, int rows, int columns) {
 	return ans;
 }
 double** subtractScalarMatrixs(double** arrs, int rows, int columns, double num) {
-	double**ans = new double*[rows];
-	for (int i = 0; i<rows; i++){
+	double** ans = new double* [rows];
+	for (int i = 0; i < rows; i++) {
 		ans[i] = new double[columns];
 	}
-	for (int i = 0; i<rows; i++){
-		for (int j = 0; j<columns; j++){
+	for (int i = 0; i < rows; i++) {
+		for (int j = 0; j < columns; j++) {
 			ans[i][j] = num;
 		}
 	}
-	for (int j = 0; j<rows; j++){
-		for (int k = 0; k<columns; k++){
+	for (int j = 0; j < rows; j++) {
+		for (int k = 0; k < columns; k++) {
 			ans[j][k] = arrs[j][k] - ans[j][k];
 		}
 	}
 	return ans;
 }
 double** multiplyMatrixs(double*** arrs, int num, int rows, int columns) {
-	double**ans = new double*[rows];
-	for (int i = 0; i<rows; i++){
+	double** ans = new double* [rows];
+	for (int i = 0; i < rows; i++) {
 		ans[i] = new double[columns];
 	}
-	for (int i = 0; i<rows; i++){
-		for (int j = 0; j<rows; j++){
+	for (int i = 0; i < rows; i++) {
+		for (int j = 0; j < rows; j++) {
 			ans[i][j] = 1;
 		}
 	}
-	for (int i = 1; i<rows; i++){
-		for (int j = 0; j<rows; j++){
-			for (int k = 0; k<rows; k++){
+	for (int i = 1; i < rows; i++) {
+		for (int j = 0; j < rows; j++) {
+			for (int k = 0; k < rows; k++) {
 				ans[j][k] *= arrs[i][j][k];
 			}
 		}
@@ -279,35 +278,35 @@ double** multiplyMatrixs(double*** arrs, int num, int rows, int columns) {
 	return ans;
 }
 double** multiplyScalarMatrixs(double** arrs, int rows, int columns, double num) {
-	double**ans = new double*[rows];
-	for (int i = 0; i<rows; i++){
+	double** ans = new double* [rows];
+	for (int i = 0; i < rows; i++) {
 		ans[i] = new double[columns];
 	}
-	for (int i = 0; i<rows; i++){
-		for (int j = 0; j<columns; j++){
+	for (int i = 0; i < rows; i++) {
+		for (int j = 0; j < columns; j++) {
 			ans[i][j] = num;
 		}
 	}
-	for (int j = 0; j<rows; j++){
-		for (int k = 0; k<columns; k++){
+	for (int j = 0; j < rows; j++) {
+		for (int k = 0; k < columns; k++) {
 			ans[j][k] = arrs[j][k] * ans[j][k];
 		}
 	}
 	return ans;
 }
 double** divideMatrixs(double*** arrs, int num, int rows, int columns) {
-	double**ans = new double*[rows];
-	for (int i = 0; i<rows; i++){
+	double** ans = new double* [rows];
+	for (int i = 0; i < rows; i++) {
 		ans[i] = new double[columns];
 	}
-	for (int i = 0; i<rows; i++){
-		for (int j = 0; j<rows; j++){
+	for (int i = 0; i < rows; i++) {
+		for (int j = 0; j < rows; j++) {
 			ans[i][j] = arrs[0][i][j];
 		}
 	}
-	for (int i = 1; i<rows; i++){
-		for (int j = 0; j<rows; j++){
-			for (int k = 0; k<rows; k++){
+	for (int i = 1; i < rows; i++) {
+		for (int j = 0; j < rows; j++) {
+			for (int k = 0; k < rows; k++) {
 				ans[j][k] /= arrs[i][j][k];
 			}
 		}
@@ -315,42 +314,42 @@ double** divideMatrixs(double*** arrs, int num, int rows, int columns) {
 	return ans;
 }
 double** divideScalarMatrixs(double** arrs, int rows, int columns, double num) {
-	double**ans = new double*[rows];
-	for (int i = 0; i<rows; i++){
+	double** ans = new double* [rows];
+	for (int i = 0; i < rows; i++) {
 		ans[i] = new double[columns];
 	}
-	for (int i = 0; i<rows; i++){
-		for (int j = 0; j<columns; j++){
+	for (int i = 0; i < rows; i++) {
+		for (int j = 0; j < columns; j++) {
 			ans[i][j] = num;
 		}
 	}
-	for (int j = 0; j<rows; j++){
-		for (int k = 0; k<columns; k++){
+	for (int j = 0; j < rows; j++) {
+		for (int k = 0; k < columns; k++) {
 			ans[j][k] = arrs[j][k] / ans[j][k];
 		}
 	}
 	return ans;
 }
-double** transpose(double**arr, int rows, int columns){
-	double**ans = new double*[rows];
-	for (int i = 0; i<rows; i++){
+double** transpose(double** arr, int rows, int columns) {
+	double** ans = new double* [rows];
+	for (int i = 0; i < rows; i++) {
 		ans[i] = new double[columns];
 	}
-	for (int j = 0; j<rows; j++){
-		for (int k = 0; k<columns; k++){
+	for (int j = 0; j < rows; j++) {
+		for (int k = 0; k < columns; k++) {
 			ans[k][j] = arr[j][k];
 		}
 	}
 	return ans;
 }
-double** subMatrix(double** arr, int size, int x, int y){
-	double** sub = new double*[size - 1];
+double** subMatrix(double** arr, int size, int x, int y) {
+	double** sub = new double* [size - 1];
 	int ii = 0, ij = 0;
-	for (int i = 0; i<size - 1; i++){
+	for (int i = 0; i < size - 1; i++) {
 		sub[ii] = new double[size - 1];
 		ij = 0;
-		if (ii != x){
-			for (int j = 0; j<size; j++){
+		if (ii != x) {
+			for (int j = 0; j < size; j++) {
 				sub[ii][ij] = arr[i][j];
 				ij++;
 			}
@@ -359,10 +358,10 @@ double** subMatrix(double** arr, int size, int x, int y){
 	}
 	return sub;
 }
-void mainMenuChoice(int s){
+void mainMenuChoice(int s) {
 	int numberOfArrays, rows, columns, inputType;
 	double** arr;
-	switch (s){
+	switch (s) {
 	case 1:
 		cout << "Enter number of rows of matrix:";
 		cin >> rows;
@@ -370,8 +369,11 @@ void mainMenuChoice(int s){
 		cin >> columns;
 		cout << "Which of the following methods do you prefer to use to read the array?\n";
 		cout << "1. Console Input.\n2. Read File.\n\n";
-		do{
+		do {
 			cin >> inputType;
+			if (inputType != 1 && inputType != 2) {
+				cout << "Invalid Input, Choose a valid option." << endl;
+			}
 		} while (inputType != 1 && inputType != 2);
 		arr = create2D(rows, columns);
 		cout << "Enter arr:\n";
@@ -412,7 +414,7 @@ void mainMenuChoice(int s){
 		break;
 	}
 }
-void showMainMenuOptions(){
+void showMainMenuOptions() {
 	cout << "1. Sum of Matrix (sum of all values)\n";
 	cout << "2. Product of Matrix (product of all values)\n";
 	cout << "3. Row-wise Average\n";
@@ -433,10 +435,23 @@ void showMainMenuOptions(){
 }
 int main() {
 	int s;
-	while (1){
-		showMainMenuOptions();
-		cout << "\nEnter Choice: ";
-		cin >> s;
+	char buffer;
+	do{
+		do {
+			showMainMenuOptions();
+			cout << "\nEnter Choice: ";
+			cin >> s;
+			if (s < 1 && s>17) {
+				cout << "Invalid Input, Choose a valid option." << endl;
+			}
+		} while (s < 1 && s>17);
 		mainMenuChoice(s);
-	}
+		do {
+			cout << "Continue? y/n\n";
+			cin >> buffer;
+			if (buffer != 'n' && buffer != 'y') {
+				cout << "Invalid Input, Choose a valid option." << endl;
+			}
+		} while (buffer != 'n' && buffer != 'y');
+	} while (buffer!='n');
 }
